@@ -61,8 +61,8 @@ function makeFriendlyDates(arr) {
     if (getMonthDiff(date1, date2) < 12 && date1.getUTCFullYear() === date2.getUTCFullYear()) {
         return [getMonthStr(date1) + ' ' + addNumSuffix(date1.getUTCDate()) + ', ' + date1.getUTCFullYear(), getMonthStr(date2) + ' ' + addNumSuffix(date2.getUTCDate())];
     } else
-    // If diff 12 months and 0 days
-    if (getMonthDiff(date1, date2) === 12 && getDateDiff(date1, date2)) {
+    // If diff 12 months
+    if (getMonthDiff(date1, date2) === 12 && getDateDiff(date1, date2) < 0) {
         return [getMonthStr(date1) + ' ' + addNumSuffix(date1.getUTCDate()) + ', ' + date1.getUTCFullYear(), getMonthStr(date2) + ' ' + addNumSuffix(date2.getUTCDate())];
     }
     // If range more than a year
